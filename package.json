@@ -1,0 +1,52 @@
+{
+  "name": "kidaptive-ui-base",
+  "version": "1.0.0",
+  "description": "A common starting point for react-based web apps, built using webpack",
+  "main": "index.jsx",
+  "scripts": {
+    "test": "jest",
+    "start": "f(){ webpack-dev-server --env.environment=local --env.DISABLE_ANALYTICS=$1 --env.BASE_ALP_URL=$2 --config webpack.hot.config.js --disable-host-check;}; f",
+    "clean": "rm -rf dist",
+    "clean-full": "rm -rf node_modules; npm ci; npm run clean",
+    "local": "npm run clean; npm run test; webpack --config webpack.local.config.js",
+    "local-full": "npm run clean-full; npm run local",
+    "dev": "npm run clean; npm run test; webpack --config webpack.dev.config.js",
+    "dev-full": "npm run clean-full; npm run dev",
+    "prod": "npm run clean; npm run test; webpack -p --config webpack.prod.config.js",
+    "prod-full": "npm run clean-full; npm run prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kidapt/kidaptive-ui-base.git"
+  },
+  "author": "byronbecker => <insert author name>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kidapt/kidaptive-ui-base/issues"
+  },
+  "homepage": "https://github.com/Kidapt/kidaptive-ui-base#readme",
+  "dependencies": {
+    "core-js": "^3.1.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.4",
+    "regenerator-runtime": "^0.13.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.0.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.8.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-server": "^3.7.2"
+  }
+}
